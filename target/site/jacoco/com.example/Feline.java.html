@@ -10,6 +10,7 @@ import java.util.List;
     }
 
     @Override
+<<<<<<< HEAD
     public int getKittens() {
 <span class="fc" id="L14">        return 1;</span>
     }
@@ -17,6 +18,19 @@ import java.util.List;
     @Override
     public String getFamily() {
 <span class="fc" id="L19">        return &quot;feline&quot;;</span>
+=======
+    public String getFamily() {
+<span class="fc" id="L14">        return &quot;feline&quot;;</span>
+    }
+
+    @Override
+    public int getKittens() {
+<span class="fc" id="L19">        return super.getKittens(); // вызов метода из класса Animal</span>
+    }
+
+    public int getKittens(int kittensCount) {
+<span class="fc" id="L23">        return kittensCount;</span>
+>>>>>>> 3f0b72b2f72f2a83644550bc3a1c738999fbfab7
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
