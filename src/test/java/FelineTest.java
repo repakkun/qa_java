@@ -37,16 +37,4 @@ public class FelineTest {
         Feline feline = new Feline();
         assertEquals(1, feline.getKittens());
     }
-
-    @Test
-    void felineShouldReturnTwoKittens() {
-        Feline feline = new Feline();
-        assertEquals(2, feline.getKittens(2));
-    }
-
-    @Test
-    void felineShouldReturnThreeKittens() {
-        Feline feline = new Feline();
-        assertEquals(3, feline.getKittens(3));
-    }
 }

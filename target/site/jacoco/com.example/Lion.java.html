@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Lion {
 
-    boolean hasMane;
-    Predator predator;
+    private boolean hasMane;
+    private Predator predator;
 
 <span class="fc" id="L10">    public Lion(String sex, Predator predator) throws Exception {</span>
 <span class="pc bpc" id="L11" title="1 of 2 branches missed.">        if (&quot;male&quot;.equals(sex)) {</span>
@@ -18,7 +18,7 @@ public class Lion {
 <span class="fc" id="L18">        this.predator = predator;</span>
 <span class="fc" id="L19">    }</span>
 
-    public int getKittens() {
+    public int getKittens() throws Exception {
 <span class="fc" id="L22">        return predator.getKittens();</span>
     }
 
@@ -29,6 +29,5 @@ public class Lion {
     public List&lt;String&gt; getFood() throws Exception {
 <span class="fc" id="L30">        return predator.eatMeat();</span>
     }
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
