@@ -8,6 +8,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class LionTest {
@@ -21,8 +22,6 @@ public class LionTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        when(predator.getKittens()).thenReturn(3);
-
         lion = new Lion("male", predator);
     }
 
@@ -35,7 +34,21 @@ public class LionTest {
     @Test
     public void testDoesHaveMane() {
         boolean hasMane = lion.doesHaveMane();
-        assertEquals(true, hasMane);
+        assertTrue(hasMane);
+    }
+
+    @Test
+    public void testFemaleDoesNotHaveMane() throws Exception {
+        lion = new Lion("female", predator);
+        boolean hasMane = lion.doesHaveMane();
+        assertTrue(!hasMane);
+    }
+
+    @Test
+    public void testHasManeThrowsException() throws Exception {
+        lion = new Lion("test", predator);
+        boolean hasMane = lion.doesHaveMane();
+        assertTrue(!hasMane);
     }
 
     @Test

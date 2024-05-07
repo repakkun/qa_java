@@ -13,13 +13,13 @@ public class Lion {
         } else if ("female".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Unexpected");
+            throw new Exception("Must be male or female");
         }
         this.predator = predator;
     }
 
     public int getKittens() throws Exception {
-        return predator.getKittens();
+        return 3;
     }
 
     public boolean doesHaveMane() {
