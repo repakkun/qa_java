@@ -13,7 +13,7 @@ public class Lion {
         } else if ("female".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Must be male or female");
+            throw new Exception("Необходимо внести значение male или female");
         }
         this.predator = predator;
     }
