@@ -4,31 +4,22 @@ import java.util.List;
 
 public class Lion {
 
-<<<<<<< HEAD
     private boolean hasMane;
-    private Predator predator;
-=======
-    boolean hasMane;
-    Predator predator;
->>>>>>> 3f0b72b2f72f2a83644550bc3a1c738999fbfab7
+    private final Feline feline;
 
-<span class="fc" id="L10">    public Lion(String sex, Predator predator) throws Exception {</span>
-<span class="pc bpc" id="L11" title="1 of 2 branches missed.">        if (&quot;male&quot;.equals(sex)) {</span>
+<span class="fc" id="L10">    public Lion(String sex, Feline feline) throws Exception {</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (&quot;Male&quot;.equals(sex)) {</span>
 <span class="fc" id="L12">            hasMane = true;</span>
-<span class="nc bnc" id="L13" title="All 2 branches missed.">        } else if (&quot;female&quot;.equals(sex)) {</span>
-<span class="nc" id="L14">            hasMane = false;</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        } else if (&quot;Female&quot;.equals(sex)) {</span>
+<span class="fc" id="L14">            hasMane = false;</span>
         } else {
-<span class="nc" id="L16">            throw new Exception(&quot;Unexpected&quot;);</span>
+<span class="fc" id="L16">            throw new Exception(&quot;Exception&quot;);</span>
         }
-<span class="fc" id="L18">        this.predator = predator;</span>
+<span class="fc" id="L18">        this.feline = feline;</span>
 <span class="fc" id="L19">    }</span>
 
-<<<<<<< HEAD
-    public int getKittens() throws Exception {
-=======
     public int getKittens() {
->>>>>>> 3f0b72b2f72f2a83644550bc3a1c738999fbfab7
-<span class="fc" id="L22">        return predator.getKittens();</span>
+<span class="fc" id="L22">        return feline.getKittens();</span>
     }
 
     public boolean doesHaveMane() {
@@ -36,7 +27,7 @@ public class Lion {
     }
 
     public List&lt;String&gt; getFood() throws Exception {
-<span class="fc" id="L30">        return predator.eatMeat();</span>
+<span class="fc" id="L30">        return feline.getFood(&quot;Хищник&quot;);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

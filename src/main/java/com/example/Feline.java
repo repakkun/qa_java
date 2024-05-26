@@ -6,16 +6,20 @@ public class Feline extends Animal implements Predator {
 
     @Override
     public List<String> eatMeat() throws Exception {
-        return getFood("predator");
-    }
-
-    @Override
-    public int getKittens() {
-        return 1;
+        return getFood("Predator");
     }
 
     @Override
     public String getFamily() {
-        return "feline";
+        return "CatMeow";
     }
+
+    public int getKittens() {
+        return getKittens(1);
+    }
+
+    public int getKittens(int kittensCount) {
+        return kittensCount;
+    }
+
 }

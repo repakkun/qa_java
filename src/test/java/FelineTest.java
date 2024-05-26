@@ -1,40 +1,32 @@
-import com.example.Feline;
+import static org.junit.Assert.assertEquals;
+import java.util.List;
 
+import com.example.Predator;
 import org.junit.jupiter.api.Test;
-
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.example.Feline;
 
 public class FelineTest {
 
     @Test
-    void felineShouldReturnCorrectFoodForCarnivore() throws Exception {
-        // Arrange
+    public void testEatMeat() throws Exception {
         Feline feline = new Feline();
-
-        // Act
-        int foodCount = feline.eatMeat().size();
-
-        // Assert
-        assertEquals(3, foodCount);
+        feline.getFood("Predator");
+        List<String> foodList = feline.eatMeat();
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), foodList);
     }
 
 
     @Test
-    void felineShouldReturnCorrectFamily() {
-        // Arrange
+    public void testGetFamily() {
         Feline feline = new Feline();
-
-        // Act
         String family = feline.getFamily();
-
-        // Assert
-        assertEquals("feline", family);
+        assertEquals("CatMeow", family);
     }
 
     @Test
-    void felineShouldReturnOneKitten() {
+    public void testGetKittens() {
         Feline feline = new Feline();
-        assertEquals(1, feline.getKittens());
+        int kittensCount = feline.getKittens();
+        assertEquals(1, kittensCount);
     }
 }
