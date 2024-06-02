@@ -1,5 +1,4 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.util.List;
@@ -46,24 +45,12 @@ public class LionTest {
         assertEquals(false, lionWithoutMane.doesHaveMane());
     }
 
-    /*@Test
-    public void testDoesHaveManeException() throws Exception {
-        Feline mockFeline = mock(Feline.class);
-        Lion lionWithoutMane = new Lion("NotMale", mockFeline);
-
-        assertEquals("Exception", lionWithoutMane.doesHaveMane());
-    }
-*/
     @Test
-    public void testLionConstructorException() {
+    public void testLionConstructorThrowsExceptionForInvalidSex() {
         Feline mockFeline = mock(Feline.class);
-
-        try {
-            // Создание объекта Lion с некорректным значением пола
-            Lion lionWithoutMane = new Lion("NotMale", mockFeline);
-            fail("Expected an Exception to be thrown");
-        } catch (Exception e) {
-            assertEquals("Exception", e.getMessage());
-        }
+        Exception exception = assertThrows(Exception.class, () -> {
+            new Lion("invalid test", mockFeline);
+        });
+        assertEquals("Exception", exception.getMessage());
     }
 }
